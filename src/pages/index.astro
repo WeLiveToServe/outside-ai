@@ -1,7 +1,32 @@
 ---
 import Base from "../layouts/Base.astro";
 
-const systems = ["Pentair", "Hayward", "The Attendant", "Jandy"];
+const productLinks = [
+  {
+    name: "Pentair",
+    url: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation.html",
+    logo: "https://www.pentair.com/content/dam/extranet/enterprise/images/logos/pentair/pentair-logo-web.svg",
+    logoAlt: "Pentair",
+  },
+  {
+    name: "Hayward",
+    url: "https://www.hayward.com/products/pool-automation.html",
+    logo: "https://s27.q4cdn.com/336738972/files/design/logo.svg",
+    logoAlt: "Hayward",
+  },
+  {
+    name: "The Attendant",
+    url: "https://www.poolside.tech/products",
+    logo: "https://www.lathampool.com/wp-content/uploads/2024/05/The-Attendant-Powered-By3-768x212.jpg",
+    logoAlt: "The Attendant powered by Poolside Tech",
+  },
+  {
+    name: "Jandy",
+    url: "https://www.jandy.com/en/products/pool-automation",
+    logo: "",
+    logoAlt: "Jandy",
+  },
+];
 const services = [
   "Automation setup and configuration",
   "Equipment monitoring and alerting",
@@ -19,6 +44,31 @@ const services = [
         <div class="signal signal--two"></div>
       </div>
 
+      <header class="site-header shell">
+        <a class="brand-mark" href="/" aria-label="Outside AI home">
+          <span>Outside</span>
+          <strong>AI</strong>
+        </a>
+        <nav class="desktop-products" aria-label="Automation product pages">
+          <span>Products</span>
+          {productLinks.map((product) => (
+            <a href="#product-sources" data-official-url={product.url}>
+              {product.name}
+            </a>
+          ))}
+        </nav>
+        <details class="mobile-products">
+          <summary>Products</summary>
+          <div>
+            {productLinks.map((product) => (
+              <a href="#product-sources" data-official-url={product.url}>
+                {product.name}
+              </a>
+            ))}
+          </div>
+        </details>
+      </header>
+
       <div class="shell hero__grid">
         <div class="hero__copy">
           <p class="eyebrow">Pool automation systems</p>
@@ -35,11 +85,46 @@ const services = [
         </div>
 
         <aside class="system-panel" aria-label="Supported automation systems">
-          <p class="panel-label">Supported systems</p>
+          <p class="panel-label">Systems we support</p>
           <ul>
-            {systems.map((system) => <li>{system}</li>)}
+            {productLinks.map((product) => (
+              <li>
+                {product.logo ? (
+                  <img src={product.logo} alt={product.logoAlt} loading="lazy" />
+                ) : (
+                  <strong>{product.name}</strong>
+                )}
+              </li>
+            ))}
           </ul>
+          <p class="trademark-note">
+            All trademarks are property of their respective owners. Outside AI is an independent service provider.
+          </p>
         </aside>
+      </div>
+    </section>
+
+    <section class="product-sources section" id="product-sources" aria-labelledby="product-sources-title">
+      <div class="shell">
+        <div class="product-sources__heading">
+          <p class="eyebrow">Product references</p>
+          <h2 id="product-sources-title">Automation pages we support.</h2>
+        </div>
+        <div class="product-source-grid">
+          {productLinks.map((product) => (
+            <article class="product-source-card">
+              <div class="product-source-card__brand">
+                {product.logo ? (
+                  <img src={product.logo} alt={product.logoAlt} loading="lazy" />
+                ) : (
+                  <strong>{product.name}</strong>
+                )}
+              </div>
+              <p>{product.name} automation systems</p>
+              <code>{product.url}</code>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
 
