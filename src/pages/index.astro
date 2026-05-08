@@ -27,8 +27,12 @@ const services = [
   "Automation setup and configuration",
   "Equipment monitoring and alerting",
   "Troubleshooting controls, sensors, pumps, heaters, valves, and schedules",
-  "Upgrade planning for aging pool pads and mixed-vendor systems",
+  "Upgrade planning for aging equipment and mixed-vendor systems",
 ];
+
+const emailHref = "mailto:info@cusoon-pools.com?subject=Outside%20AI%20pool%20automation%20inquiry";
+const desktopEmailHref = "https://mail.google.com/mail/?view=cm&fs=1&to=info%40cusoon-pools.com&su=Outside%20AI%20pool%20automation%20inquiry";
+const year = new Date().getFullYear();
 ---
 
 <Base>
@@ -56,16 +60,22 @@ const services = [
 
       <div class="shell hero__grid">
         <div class="hero__copy">
-          <p class="eyebrow">Pool automation systems</p>
-          <h1>Smarter pool controls, calmer pool ownership.</h1>
+          <p class="eyebrow hero-kicker">Smarter Pools. Happier Owners.</p>
           <p class="lede">
-            Outside AI supports swimming pool automation, monitoring, troubleshooting,
-            and upgrades for homes and properties across Greater Boston and New England.
+            Installation, service, and repair for all modern automation systems.
+            Enjoy your best pool of tomorrow, today.
           </p>
 
           <div class="cta-row" aria-label="Contact Outside AI">
-            <a class="button button--primary" href="tel:+19789965805">Call 978-996-5805</a>
-            <a class="button button--secondary" href="mailto:info@cusoon-pools.com?subject=Outside%20AI%20pool%20automation%20inquiry">Email Outside AI</a>
+            <a class="button button--primary" href="tel:+19789046065">Call 978-904-6065</a>
+            <a
+              class="button button--secondary"
+              href={emailHref}
+              data-email-cta
+              data-desktop-href={desktopEmailHref}
+            >
+              Email Outside AI
+            </a>
           </div>
         </div>
 
@@ -93,7 +103,7 @@ const services = [
       <div class="shell split">
         <div>
           <p class="eyebrow">Specialized support</p>
-          <h2>Built for the pool pad you actually have.</h2>
+          <h2>Built for the pool you actually have.</h2>
         </div>
         <p>
           Modern pool equipment rarely lives in a perfect single-brand world. We help
@@ -117,17 +127,23 @@ const services = [
       </div>
     </section>
 
-    <section class="section final-cta">
-      <div class="shell final-cta__inner">
-        <div>
-          <p class="eyebrow">First conversation</p>
-          <h2>Tell us what system you have and what is not working.</h2>
-        </div>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <a class="footer-logo" href="/" aria-label="Outside AI home">
+          <img
+            src="/brand/outside-ai-logo-desktop-transparent.png"
+            alt="Outside AI Pool & Spa Automation Systems"
+            width="1100"
+            height="260"
+            loading="lazy"
+          />
+        </a>
         <div class="contact-stack">
-          <a href="tel:+19789965805">978-996-5805</a>
-          <a href="mailto:info@cusoon-pools.com?subject=Outside%20AI%20pool%20automation%20inquiry">info@cusoon-pools.com</a>
+          <a href="tel:+19789046065">978-904-6065</a>
+          <a href={emailHref} data-email-cta data-desktop-href={desktopEmailHref}>info@cusoon-pools.com</a>
         </div>
+        <p class="copyright">&copy; {year} Outside AI. All rights reserved.</p>
       </div>
-    </section>
+    </footer>
   </main>
 </Base>

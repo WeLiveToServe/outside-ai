@@ -3,7 +3,7 @@ import "../styles/global.css";
 
 const title = "Outside AI | Swimming Pool Automation Systems";
 const description =
-  "Outside AI supports swimming pool automation, monitoring, troubleshooting, and upgrades for Pentair, Hayward, The Attendant, and Jandy systems across Greater Boston and New England.";
+  "Installation, service, and repair for all modern pool and spa automation systems across Greater Boston and New England.";
 const canonical = "https://outside-ai.com/";
 
 const jsonLd = {
@@ -11,7 +11,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Outside AI",
   url: canonical,
-  telephone: "+19789965805",
+  telephone: "+19789046065",
   email: "info@cusoon-pools.com",
   areaServed: [
     "Greater Boston",
@@ -64,5 +64,22 @@ const jsonLd = {
   </head>
   <body>
     <slot />
+    <script>
+      const emailCtas = document.querySelectorAll("[data-email-cta]");
+      const isDesktopEmail =
+        !/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) &&
+        !window.matchMedia("(pointer: coarse)").matches &&
+        !("ontouchstart" in window);
+
+      emailCtas.forEach((emailCta) => {
+        if (!(emailCta instanceof HTMLAnchorElement)) return;
+        const desktopHref = emailCta.getAttribute("data-desktop-href");
+        emailCta.addEventListener("click", (event) => {
+          if (!isDesktopEmail || !desktopHref) return;
+          event.preventDefault();
+          window.open(desktopHref, "_blank", "noopener,noreferrer");
+        });
+      });
+    </script>
   </body>
 </html>
