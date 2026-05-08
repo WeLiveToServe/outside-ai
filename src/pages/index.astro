@@ -4,26 +4,22 @@ import Base from "../layouts/Base.astro";
 const productLinks = [
   {
     name: "Pentair",
-    url: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation.html",
     logo: "https://www.pentair.com/content/dam/extranet/enterprise/images/logos/pentair/pentair-logo-web.svg",
     logoAlt: "Pentair",
   },
   {
     name: "Hayward",
-    url: "https://www.hayward.com/products/pool-automation.html",
     logo: "https://s27.q4cdn.com/336738972/files/design/logo.svg",
     logoAlt: "Hayward",
   },
   {
     name: "The Attendant",
-    url: "https://www.poolside.tech/products",
-    logo: "https://www.lathampool.com/wp-content/uploads/2024/05/The-Attendant-Powered-By3-768x212.jpg",
+    logo: "/brand/attendant-logo.svg",
     logoAlt: "The Attendant powered by Poolside Tech",
   },
   {
     name: "Jandy",
-    url: "https://www.jandy.com/en/products/pool-automation",
-    logo: "",
+    logo: "/brand/jandy-logo.png",
     logoAlt: "Jandy",
   },
 ];
@@ -56,24 +52,6 @@ const services = [
             />
           </picture>
         </a>
-        <nav class="desktop-products" aria-label="Automation product pages">
-          <span>Products</span>
-          {productLinks.map((product) => (
-            <a href="#product-sources" data-official-url={product.url}>
-              {product.name}
-            </a>
-          ))}
-        </nav>
-        <details class="mobile-products">
-          <summary>Products</summary>
-          <div>
-            {productLinks.map((product) => (
-              <a href="#product-sources" data-official-url={product.url}>
-                {product.name}
-              </a>
-            ))}
-          </div>
-        </details>
       </header>
 
       <div class="shell hero__grid">
@@ -108,30 +86,6 @@ const services = [
             All trademarks are property of their respective owners. Outside AI is an independent service provider.
           </p>
         </aside>
-      </div>
-    </section>
-
-    <section class="product-sources section" id="product-sources" aria-labelledby="product-sources-title">
-      <div class="shell">
-        <div class="product-sources__heading">
-          <p class="eyebrow">Product references</p>
-          <h2 id="product-sources-title">Automation pages we support.</h2>
-        </div>
-        <div class="product-source-grid">
-          {productLinks.map((product) => (
-            <article class="product-source-card">
-              <div class="product-source-card__brand">
-                {product.logo ? (
-                  <img src={product.logo} alt={product.logoAlt} loading="lazy" />
-                ) : (
-                  <strong>{product.name}</strong>
-                )}
-              </div>
-              <p>{product.name} automation systems</p>
-              <code>{product.url}</code>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
 

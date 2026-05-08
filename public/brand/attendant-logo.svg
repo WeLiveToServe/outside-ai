@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 145" role="img" aria-label="The Attendant by Poolside Tech">
+  <rect width="460" height="145" rx="0" fill="#2430f4"/>
+  <text x="24" y="55" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="400" letter-spacing="9">
+    THE ATTENDANT
+  </text>
+  <text x="95" y="107" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="5">
+    BY
+  </text>
+  <text x="160" y="109" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="300" letter-spacing="7">
+    POOLSIDE
+  </text>
+  <text x="333" y="109" fill="#ffffff" font-family="Segoe Script, Bradley Hand ITC, cursive" font-size="39" font-weight="300">
+    Tech
+  </text>
+</svg>
