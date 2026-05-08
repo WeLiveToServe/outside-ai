@@ -1,0 +1,87 @@
+---
+import Base from "../layouts/Base.astro";
+
+const systems = ["Pentair", "Hayward", "The Attendant", "Jandy"];
+const services = [
+  "Automation setup and configuration",
+  "Equipment monitoring and alerting",
+  "Troubleshooting controls, sensors, pumps, heaters, valves, and schedules",
+  "Upgrade planning for aging pool pads and mixed-vendor systems",
+];
+---
+
+<Base>
+  <main>
+    <section class="hero">
+      <div class="hero__backdrop" aria-hidden="true">
+        <div class="pool-surface"></div>
+        <div class="signal signal--one"></div>
+        <div class="signal signal--two"></div>
+      </div>
+
+      <div class="shell hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Pool automation systems</p>
+          <h1>Smarter pool controls, calmer pool ownership.</h1>
+          <p class="lede">
+            Outside AI supports swimming pool automation, monitoring, troubleshooting,
+            and upgrades for homes and properties across Greater Boston and New England.
+          </p>
+
+          <div class="cta-row" aria-label="Contact Outside AI">
+            <a class="button button--primary" href="tel:+19789965805">Call 978-996-5805</a>
+            <a class="button button--secondary" href="mailto:info@cusoon-pools.com?subject=Outside%20AI%20pool%20automation%20inquiry">Email Outside AI</a>
+          </div>
+        </div>
+
+        <aside class="system-panel" aria-label="Supported automation systems">
+          <p class="panel-label">Supported systems</p>
+          <ul>
+            {systems.map((system) => <li>{system}</li>)}
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell split">
+        <div>
+          <p class="eyebrow">Specialized support</p>
+          <h2>Built for the pool pad you actually have.</h2>
+        </div>
+        <p>
+          Modern pool equipment rarely lives in a perfect single-brand world. We help
+          owners, builders, and service teams make sense of automation panels, app
+          controls, pumps, heaters, valves, chemistry monitors, and remote access so the
+          system behaves predictably.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--muted">
+      <div class="shell">
+        <div class="card-grid">
+          {services.map((service) => (
+            <article class="service-card">
+              <span aria-hidden="true"></span>
+              <p>{service}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="shell final-cta__inner">
+        <div>
+          <p class="eyebrow">First conversation</p>
+          <h2>Tell us what system you have and what is not working.</h2>
+        </div>
+        <div class="contact-stack">
+          <a href="tel:+19789965805">978-996-5805</a>
+          <a href="mailto:info@cusoon-pools.com?subject=Outside%20AI%20pool%20automation%20inquiry">info@cusoon-pools.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

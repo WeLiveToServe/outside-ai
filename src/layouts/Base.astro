@@ -1,0 +1,68 @@
+---
+import "../styles/global.css";
+
+const title = "Outside AI | Swimming Pool Automation Systems";
+const description =
+  "Outside AI supports swimming pool automation, monitoring, troubleshooting, and upgrades for Pentair, Hayward, The Attendant, and Jandy systems across Greater Boston and New England.";
+const canonical = "https://outside-ai.com/";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Outside AI",
+  url: canonical,
+  telephone: "+19789965805",
+  email: "info@cusoon-pools.com",
+  areaServed: [
+    "Greater Boston",
+    "New England",
+    "Massachusetts",
+    "New Hampshire",
+    "Maine",
+  ],
+  serviceType: [
+    "Swimming pool automation",
+    "Pool equipment monitoring",
+    "Pool automation troubleshooting",
+    "Smart pool system upgrades",
+    "Pentair automation support",
+    "Hayward automation support",
+    "The Attendant automation support",
+    "Jandy automation support",
+  ],
+  knowsAbout: [
+    "Pentair",
+    "Hayward",
+    "The Attendant",
+    "Jandy",
+    "pool automation",
+    "pool monitoring",
+    "smart pool controls",
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#0b6f87" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Outside AI" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
