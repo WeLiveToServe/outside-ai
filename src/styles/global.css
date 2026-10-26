@@ -1,7 +1,7 @@
 :root { --ink: #1c2422; --muted: #5b6662; --accent: #173d35; --bg: #fbfaf7; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
-main { max-width: 38rem; margin: 0 auto; padding: 0 1rem 2rem; }
+main { max-width: 60rem; margin: 0 auto; padding: 0 1rem 2rem; }
 /* Logo: full screen width on phones, middle third of the window on desktop */
 header { padding: 3rem 1rem 0; text-align: center; }
 .logo { margin: 0 auto; width: 100%; }
@@ -9,8 +9,14 @@ header { padding: 3rem 1rem 0; text-align: center; }
 @media (min-width: 768px) { .logo { width: 60vw; } }
 @media (min-width: 1024px) { .logo { width: 33.33vw; } }
 .tagline { color: var(--muted); font-size: 1.25rem; margin: 1rem 0 2rem; }
-ul { padding-left: 1.2rem; }
-li { margin-bottom: .75rem; }
+.intro { max-width: 38rem; margin: 0 auto 2rem; text-align: center; }
+/* Cards: stacked on phones, three across on wider screens */
+.cards { display: grid; gap: 1rem; }
+@media (min-width: 768px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+.card { background: #fff; border: 1px solid #e3e0d8; border-top: 4px solid var(--accent); border-radius: 8px; padding: 1.25rem 1.25rem .5rem; box-shadow: 0 1px 3px rgb(0 0 0 / .05); }
+.card h2 { margin: 0 0 .5rem; font-size: 1.2rem; color: var(--accent); }
+.card p { margin: 0 0 1rem; color: var(--muted); }
+.cta { text-align: center; margin-top: 2.5rem; }
 .button { display: inline-block; background: var(--accent); color: #fff; padding: .75rem 1.25rem; border-radius: 6px; text-decoration: none; }
 .button:hover { opacity: .9; }
-footer { max-width: 38rem; margin: 0 auto; padding: 2rem 1rem; color: var(--muted); font-size: .85rem; }
+footer { text-align: center; max-width: 38rem; margin: 0 auto; padding: 2rem 1rem; color: var(--muted); font-size: .85rem; }
