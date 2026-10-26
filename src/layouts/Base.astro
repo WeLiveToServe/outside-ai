@@ -2,4 +2,7 @@
 import '../styles/global.css';
 const {title='Outside AI — AI for the rest of us.',description='Affordable custom AI for small businesses, and always-on personal assistants for people.'}=Astro.props;
 ---
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title}</title><meta name="description" content={description}/><link rel="canonical" href="https://outside-ai.com/"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:image" content="https://outside-ai.com/social/outside-ai-preview.png"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/></head><body><main><slot/></main><footer>© {new Date().getFullYear()} Outside AI</footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title}</title><meta name="description" content={description}/><link rel="canonical" href="https://outside-ai.com/"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:image" content="https://outside-ai.com/social/outside-ai-preview.png"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/></head><body><header>
+  <h1 class="logo"><img src="/brand/outside-ai-wordmark.webp" srcset="/brand/outside-ai-wordmark-800.webp 800w, /brand/outside-ai-wordmark.webp 1703w" sizes="(min-width: 1024px) 33.33vw, (min-width: 768px) 60vw, calc(100vw - 2rem)" alt="Outside AI" width="1703" height="291"/></h1>
+  <p class="tagline">AI for the rest of us.</p>
+</header><main><slot/></main><footer>© {new Date().getFullYear()} Outside AI</footer></body></html>

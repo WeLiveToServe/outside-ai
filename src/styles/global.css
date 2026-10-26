@@ -1,9 +1,14 @@
 :root { --ink: #1c2422; --muted: #5b6662; --accent: #173d35; --bg: #fbfaf7; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
-main { max-width: 38rem; margin: 0 auto; padding: 4rem 1rem 2rem; }
-.logo { width: 100%; max-width: 320px; height: auto; display: block; }
-.tagline { color: var(--muted); font-size: 1.25rem; margin-top: .25rem; }
+main { max-width: 38rem; margin: 0 auto; padding: 0 1rem 2rem; }
+/* Logo: full screen width on phones, middle third of the window on desktop */
+header { padding: 3rem 1rem 0; text-align: center; }
+.logo { margin: 0 auto; width: 100%; }
+.logo img { display: block; width: 100%; height: auto; }
+@media (min-width: 768px) { .logo { width: 60vw; } }
+@media (min-width: 1024px) { .logo { width: 33.33vw; } }
+.tagline { color: var(--muted); font-size: 1.25rem; margin: 1rem 0 2rem; }
 ul { padding-left: 1.2rem; }
 li { margin-bottom: .75rem; }
 .button { display: inline-block; background: var(--accent); color: #fff; padding: .75rem 1.25rem; border-radius: 6px; text-decoration: none; }
